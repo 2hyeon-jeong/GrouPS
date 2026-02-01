@@ -1,0 +1,304 @@
+/* ==========================================
+   BOJ Squad - Guild Dashboard Style
+   Main Color: Indigo (#6366F1)
+   ========================================== */
+
+:root {
+    --primary-color: #6366F1;
+    --primary-dark: #4F46E5;
+    --primary-light: #818CF8;
+    --secondary-color: #F59E0B;
+    --dark-bg: #1E1B4B;
+    --card-shadow: 0 4px 6px rgba(99, 102, 241, 0.1);
+    --card-hover-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+}
+
+/* Bootstrap Primary Color Override */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+}
+
+/* ==========================================
+   Hero Section
+   ========================================== */
+.hero-section {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%);
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%234F46E5" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.hero-section h1 {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   Guild Cards
+   ========================================== */
+.guild-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: white;
+}
+
+.guild-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.guild-card .card-body {
+    padding: 1.5rem;
+}
+
+.guild-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.guild-icon-large {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.create-guild-card {
+    border: 2px dashed var(--primary-color);
+    background: rgba(99, 102, 241, 0.05);
+    cursor: pointer;
+    min-height: 250px;
+}
+
+.create-guild-card:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-dark);
+}
+
+.guild-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.guild-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+.guild-stat i {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   Ranking Table
+   ========================================== */
+#rankingTable {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#rankingTable thead {
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+#rankingTable tbody tr {
+    transition: all 0.2s ease;
+}
+
+#rankingTable tbody tr:hover {
+    background-color: rgba(99, 102, 241, 0.05);
+    transform: scale(1.01);
+}
+
+.rank-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.rank-badge.rank-1 {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.rank-badge.rank-2 {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    color: white;
+    box-shadow: 0 4px 12px rgba(192, 192, 192, 0.4);
+}
+
+.rank-badge.rank-3 {
+    background: linear-gradient(135deg, #CD7F32, #B8860B);
+    color: white;
+    box-shadow: 0 4px 12px rgba(205, 127, 50, 0.4);
+}
+
+.rank-badge.rank-other {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+}
+
+.ranking-icon {
+    font-size: 2rem;
+}
+
+/* ==========================================
+   Modal
+   ========================================== */
+.modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-lg {
+    border-radius: 12px;
+}
+
+.btn-primary {
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+/* ==========================================
+   Form Controls
+   ========================================== */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ==========================================
+   Badge & Tags
+   ========================================== */
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ==========================================
+   Utility
+   ========================================== */
+.shadow-sm {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-muted {
+    color: #6B7280 !important;
+}
+
+/* ==========================================
+   Animations
+   ========================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .guild-card {
+        margin-bottom: 1rem;
+    }
+}
