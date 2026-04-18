@@ -98,7 +98,7 @@ curl -X POST http://localhost:8000/admin/sync/problems
 
 #### 3. 로그 확인 (실시간)
 ```bash
-docker logs -f boj_soma_api
+docker logs -f boj_groups_api
 ```
 
 예상 로그:
@@ -182,5 +182,5 @@ docker logs -f boj_soma_api
 
 문제가 발생하면 서버 로그를 확인하세요:
 ```bash
-docker logs boj_soma_api --tail 100
+docker logs boj_groups_api --tail 100
 ```

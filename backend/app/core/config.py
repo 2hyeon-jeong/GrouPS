@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     API_PREFIX: str = ""
     
     # 데이터베이스
-    DATABASE_URL: str = "postgresql+asyncpg://boj_user:boj_password@db:5432/boj_soma_db"
+    DATABASE_URL: str = "postgresql+asyncpg://boj_user:boj_password@db:5432/boj_groups_db"
     
     # JWT 설정
     SECRET_KEY: str = "your-secret-key-change-this-in-production-make-it-very-long-and-random"
